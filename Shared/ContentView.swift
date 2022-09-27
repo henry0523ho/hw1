@@ -21,13 +21,12 @@ struct ContentView: View {
                 Divider()
                     
             }
-            
-            Text("Top Stories")
+            Group{
+                Text("Top Stories")
                 .font(.largeTitle)
                 .fontWeight(.black)
                 .foregroundColor(Color.red)
                 .padding(.top)
-            Group{
                 Image("P1")
                     .resizable()
                     .scaledToFit()
@@ -42,7 +41,12 @@ struct ContentView: View {
                     .font(.footnote)
                     .foregroundColor(Color.gray)
                     .padding(.vertical)
-                    
+            }
+            HStack{
+                Image("P2").resizable()
+                    .scaledToFit()
+                Image("P3").resizable()
+                    .scaledToFit()
             }
         }
         .padding(.all, 9.0)

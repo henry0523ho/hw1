@@ -12,9 +12,16 @@ struct ContentView: View {
         ZStack{
             VStack(alignment: .leading){
                 Group{
-                    Text("News")
-                        .font(.largeTitle)
-                        .fontWeight(.black)
+                    HStack{
+                        Image("appleIcon").resizable()
+                            .scaledToFill()
+                            .frame(width:30,height:30)
+                        Text("News")
+                            .font(.largeTitle)
+                            .fontWeight(.black)
+                    }
+                    
+                    
                     Text("September 28")
                         .font(.largeTitle)
                         .fontWeight(.black)
@@ -27,7 +34,6 @@ struct ContentView: View {
                     .font(.largeTitle)
                     .fontWeight(.black)
                     .foregroundColor(Color.red)
-                    .padding(.top)
                     Image("P1")
                         .resizable()
                         .scaledToFill()
@@ -41,7 +47,6 @@ struct ContentView: View {
                     Text("7m ago")
                         .font(.footnote)
                         .foregroundColor(Color.gray)
-                        .padding(.vertical)
                 }
                 HStack{
                     Image("P2").resizable()
@@ -51,29 +56,45 @@ struct ContentView: View {
                         .scaledToFill()
                         .frame(width: .infinity/2, alignment: .top)
                 }
+                
             }
             .padding(.all, 9.0)
             .frame(width: .infinity,
                 height: .infinity)
-            Group{
-                HStack(alignment: .top){
+            
+            VStack(alignment: .center){
+                Spacer().frame(width:.infinity,height: 800)
+                HStack(alignment: .bottom, spacing: 100.0){
                     VStack{
-                        Text("hello")
-                            .font(.largeTitle)
+                        Image("TodayIcon")
+                            .resizable().scaledToFill()
+                            .frame(width:40,height: 40)
+                        Text("Today")
+                            .font(.footnote)
+                            .foregroundColor(.pink)
                     }
                     VStack{
-                        Text("hello")
+                        Image("AudioIcon")
+                            .resizable().scaledToFill()
+                            .frame(width:40,height: 40)
+                        Text("Audio")
+                            .font(.footnote)
+                            .foregroundColor(.gray)
                     }
                     VStack{
-                        Text("hello")
-                            .font(.largeTitle)
-                            .foregroundColor(Color.green)
+                        Image("FollowingIcon")
+                            .resizable().scaledToFill()
+                            .frame(width:40,height: 40)
+                        Text("Following")
+                            .font(.footnote).foregroundColor(.gray)
                     }
-                }
-                .padding(.top, 100.0)
-                .position(y:100)
-                
-            }.frame(width: .infinity, height: 50, alignment: .bottom)
+                    
+                }.padding(EdgeInsets(top:0,leading: 30,bottom:40,trailing : 30))
+                .padding(.all)
+                .background(Color(.systemGray5))
+                .frame(width:.infinity)
+                .position(x:210,y:60)
+            }.frame(width:.infinity,alignment:.bottomLeading)
             
         }
         
